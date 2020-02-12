@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CursosComponent } from './cursos.component';
 import { CursoDetalleComponent } from './curso-detalle/curso-detalle.component';
+import { CursosService } from './cursos.service';
 
 
 
@@ -15,6 +16,9 @@ import { CursoDetalleComponent } from './curso-detalle/curso-detalle.component';
   ],
   exports: [
     CursosComponent
+  ],
+  providers: [
+    CursosService
   ]
 })
 export class CursosModule { }

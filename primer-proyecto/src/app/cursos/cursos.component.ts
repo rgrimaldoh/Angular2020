@@ -12,15 +12,10 @@ export class CursosComponent implements OnInit {
   nombrePortal: string;
   arreglo: string[];
 
-  constructor() {
+  constructor(private cursosService: CursosService) {
     this.nombrePortal = 'http://google.com';
 
-    /*for(let i=0; i < this.arreglo.length; i++)
-    {
-      let curso = this.arreglo[i];
-    }*/
-    var servicio = new CursosService();
-
+    this.arreglo = this.cursosService.getCursos();
 
    }
     

@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class CursosService {
 
-  //http
-
   constructor() { }
 
   getCursos() {
