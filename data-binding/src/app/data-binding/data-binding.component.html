@@ -1,6 +1,6 @@
 <section class="property-binding">
 
-    <article>
+    <!--<article>
         <h3>Titulo del html binding</h3>      
         <p>String renderizada com interpolacion: {{ url }}</p>
         <p>Resultado de 1 + 1 es: {{ 1 + 1 }}</p>
@@ -15,6 +15,45 @@
         <img [src]="urlImagen">
         <br>
         <img bind-src="urlImagen">
+    </article>-->
+    <article>
+        <h3>Class e Style Binding</h3>
+        <div>
+            Seleccione una classe:
+            <select #classe (change)="0" class="custom-select">
+                <option value="alert-success">Suceso</option>
+                <option value="alert-info">Informacion</option>
+                <option value="alert-warning">Alerta</option>
+                <option value="alert-danger">Error</option>
+            </select>
+
+            <br><br>
+
+            <div class="alert {{ classe.value }}" role="alert">
+                Texto de colores con el valor del combobox                
+            </div>
+
+            <div class="alert {{ classe.value }}" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+                Aparece solo cuando hay error                
+            </div>
+            <br>
+
+            <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
+                A simple success alert—check it out!
+            </div>
+            <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">    
+            A simple danger alert—check it out!
+            </div>
+            <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">   
+            A simple warning alert—check it out!
+            </div>
+            <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">   
+            A simple info alert—check it out!
+            </div>
+
+
+
+        </div>
     </article>
 
 </section>
